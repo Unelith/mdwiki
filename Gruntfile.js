@@ -40,6 +40,7 @@ module.exports = function(grunt) {
             'js/gimmicks/colorbox.js',
             'js/gimmicks/columns.js',
             'js/gimmicks/carousel.js',
+            'js/gimmicks/del.js',
             'js/gimmicks/disqus.js',
             'js/gimmicks/facebooklike.js',
             'js/gimmicks/floatnext.js',
