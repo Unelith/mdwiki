@@ -14,7 +14,16 @@
             var param = $link.attr('href');
 
             // Remove gimmick invocation
-            $link.remove();
+
+            // Detect parent paragraph, if it exists
+            var linkParent = $link.parent();
+            var linkSiblings = $link.siblings().not('br'); // We don't want the stray <br> to influence the removal condition
+            if (linkParent.hasClass('md-text') && linkSiblings.length === 0) {
+              var linkParagraph = linkParent.closest('p');
+              linkParagraph.remove();
+            } else {
+              $link.remove();
+            }
 
             // Only do this once to avoid weird bugs
             if (i > 0) {

@@ -17,6 +17,15 @@
             var newTitle = oldTitle + (oldTitle !== '' ? ' - ' : '') + setTitle;
             document.title = newTitle;
 
+            // Detect parent paragraph, if it exists
+            var linkParent = $link.parent();
+            var linkSiblings = $link.siblings().not('br'); // We don't want the stray <br> to influence the removal condition
+            if (linkParent.hasClass('md-text') && linkSiblings.length === 0) {
+              var linkParagraph = linkParent.closest('p');
+              linkParagraph.remove();
+              return;
+            }
+
             $link.remove();
         });
     }
