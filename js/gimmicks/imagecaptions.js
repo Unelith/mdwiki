@@ -27,7 +27,6 @@
             individualImageCols.each(function (index) {
               var column = $(this);
               var image = column.find('img');
-              console.log(image);
               var caption = image.attr('title');
 
               column.append('<div class="md-image-caption text-muted">' + caption + '</div>');
