@@ -17,7 +17,7 @@
             var newTitle = oldTitle + (oldTitle !== '' ? ' - ' : '') + setTitle;
             document.title = newTitle;
 
-            $link.replaceWith('');
+            $link.remove();
         });
     }
 }(jQuery));
