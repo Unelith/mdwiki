@@ -19,7 +19,7 @@ module.exports = function(grunt) {
     // Metadata.
         pkg: {
             name: 'MDwiki',
-            version: '0.6.3'
+            version: '0.7.0'
         },
 
         ownJsFiles: [
@@ -37,6 +37,7 @@ module.exports = function(grunt) {
             // gimmicks
             'js/gimmicks/alerts.js',
             'js/gimmicks/colorbox.js',
+            'js/gimmicks/columns.js',
             'js/gimmicks/carousel.js',
             'js/gimmicks/disqus.js',
             'js/gimmicks/facebooklike.js',
