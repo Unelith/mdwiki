@@ -37,20 +37,36 @@
             // Resolve parameter names
             var selector = params[0];
 
-            var attributes = {};
-            var numberOfPairs = (params.length - 1) / 2;
-            for (var j = 0; j < numberOfPairs; j++) {
-              var attribute = params[1 + 2*j + 0];
-              var value = params[1 + 2*j + 1];
-              attributes[attribute] = value;
-            }
-
-            // Apply attributes to the target
+            // Find target
             var target = $link.closest(selector);
             if (target.length === 0) {
               console.warn('No matching element for selector \'' + selector + '\' for \'attribute\' gimmick');
               return;
             }
+
+            // Resolve pair params
+
+            var attributes = {};
+            var numberOfPairs = (params.length - 1) / 2;
+            for (var j = 0; j < numberOfPairs; j++) {
+              var attribute = params[1 + 2*j + 0];
+              var value = params[1 + 2*j + 1];
+
+              // Handle special notation for appending new styles instead of
+              //  replacing them.
+              if (attribute === '+style') {
+                var currentStyle = target.attr('style');
+                if (!currentStyle.endsWith(';')) {
+                  currentStyle += ';';
+                }
+                attributes.style = currentStyle + value;
+                continue;
+              }
+
+              attributes[attribute] = value;
+            }
+
+            // Apply attributes to the target
             target.attr(attributes);
 
             // Remove gimmick invocation
