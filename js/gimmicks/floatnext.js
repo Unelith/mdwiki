@@ -85,6 +85,11 @@
             target.css('float', float);
             target.css('width', 'auto');
 
+            // If the target is a table, add a margin as well
+            if (selector === 'table' || selector === '.table') {
+              target.css('margin', '15px');
+            }
+
             // Drop the class that indicates the target
             target.removeClass('md-floatnext-target');
 
