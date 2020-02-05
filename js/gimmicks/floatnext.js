@@ -32,7 +32,7 @@
             //  as we intend)
             var linkParagraph = $link.closest('p');
 
-            if (params < 2) {
+            if (params.length < 2) {
               console.warn('\'floatnext\' gimmick used, but not enough parameters given (2 required)');
               // Make sure to remove gimmick invocation before returning
               linkParagraph.remove();
