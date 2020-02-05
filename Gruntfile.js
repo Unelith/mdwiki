@@ -50,6 +50,7 @@ module.exports = function(grunt) {
             'js/gimmicks/imagecaptions.js',
             'js/gimmicks/math.js',
             'js/gimmicks/prism.js',
+            'js/gimmicks/rowbreak.js',
             // 'js/gimmicks/leaflet.js',
             'js/gimmicks/title.js',
             'js/gimmicks/themechooser.js',
